@@ -1,11 +1,11 @@
 def notify(status) {
-  mail (
-emailext body: '''${status}: Job \'${env.JOB_NAME} [${env.BUILD_NUMBER}]\':
-                 Check console output at, 
-                 href=\'${env.BUILD_URL}\'>${env.JOB_NAME} [${env.BUILD_NUMBER}]''', 
-                 recipientProviders: [developers()], 
-                 subject: 'JenkinsNotification: ${status}:', 
-                 to: 'shaileshubhe77@gmail.com'
+    mail (
+           emailext body: '''${status}: Job \'${env.JOB_NAME} [${env.BUILD_NUMBER}]\':
+           Check console output at, 
+           href=\'${env.BUILD_URL}\'>${env.JOB_NAME} [${env.BUILD_NUMBER}]''', 
+           recipientProviders: [developers()], 
+           subject: 'JenkinsNotification: ${status}:', 
+           to: 'shaileshubhe77@gmail.com'
   )
 }
 pipeline{
