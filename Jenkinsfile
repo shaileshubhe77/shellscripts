@@ -11,7 +11,7 @@ emailext body: '''${status}: Job \'${env.JOB_NAME} [${env.BUILD_NUMBER}]\':
 pipeline{
     agent any
     stages {
-        //notify('Started')
+        notify('Started')
         stage ('Checkout'){ 
             steps {       
                 checkout changelog: false, 
