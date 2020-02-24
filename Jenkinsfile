@@ -9,9 +9,7 @@ def notify(status) {
  }
 
 pipeline{
-    agent {
-        lable 'master'
-    }
+    agent any
     stages {
         //notify('Started')
         stage ('Checkout'){ 
