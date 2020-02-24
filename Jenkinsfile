@@ -13,7 +13,7 @@ pipeline{
         lable 'master'
     }
     stages {
-        notify('Started')
+        //notify('Started')
         stage ('Checkout'){ 
             steps {       
                 checkout changelog: false, 
@@ -31,8 +31,8 @@ pipeline{
                 sh label: '', script: 'mvn package'
             }
         }
-        notify ('Waiting for Deployment')
-        input 'Deploy to Staging?'
+        //notify ('Waiting for Deployment')
+        //input 'Deploy to Staging?'
         stage ('Artifacts'){
             steps {
                 archiveArtifacts 'target/*.war'
@@ -41,5 +41,5 @@ pipeline{
 
 
         }
-        notify('Completed')  
+       // notify('Completed')  
 }
