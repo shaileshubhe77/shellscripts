@@ -9,7 +9,7 @@ def notify(status) {
 pipeline{
     agent any
     stages {
-        notify('Started')
+        //notify('Started')
         stage ('Checkout'){ 
             steps {       
                 checkout changelog: false, 
@@ -37,5 +37,5 @@ pipeline{
 
 
         }
-       // notify('Completed')  
+       notify('Completed')  
 }
