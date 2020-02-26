@@ -48,11 +48,12 @@ def notify(status){
 pipeline{
     agent any
     stages {   
+       always {
+              notify('completed') 
+              //emailext body: 'build started', subject: 'build started', to: 'shaileshubhe77@gmail.com'
+              }
         stage ('Checkout'){ 
             steps { 
-                emailext body: """Build started""",
-                subject: """JenkinsNotification: ${status}:""", 
-                to: 'shaileshubhe77@gmail.com'
                 checkout changelog: false, 
                 scm: [$class: 'GitSCM', 
                 branches: [[name: '*/master']], 
