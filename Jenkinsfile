@@ -49,7 +49,7 @@ pipeline{
     agent any
     stages {
            post {
-                  notify('Job Started)
+                  notify('Job Started')
                          }
         stage ('Checkout'){ 
             steps { 
