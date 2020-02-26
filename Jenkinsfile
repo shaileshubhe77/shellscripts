@@ -48,9 +48,12 @@ def notify(status){
 pipeline{
     agent any
     stages {
-           try {
-           notify('Started')
-           }
+          emailext (
+                 body: """Build started""",
+                 subject: """JenkinsNotification: ${status}:""", 
+                 to: 'shaileshubhe77@gmail.com'
+                 )
+                 
         stage ('Checkout'){ 
             steps {       
                 checkout changelog: false, 
