@@ -1,6 +1,7 @@
 def notify(status){
        //emailext body: 'build started', 
-    emailext body: """<p> Jenkins Pipeline Notification </p>
+    emailext (
+       body: """<p> Jenkins Pipeline Notification </p>
             <table border="1" cellpadding="0" cellspacing="0" style="">
                 <thead>
                     <tr style=" background:#000; color:#ffffff;text-align:center ">
@@ -41,6 +42,7 @@ def notify(status){
             """,
        subject: """JenkinsNotification: ${status}:""", 
        to: 'shaileshubhe77@gmail.com'
+           )
 }
 
 pipeline{
