@@ -49,8 +49,10 @@ pipeline{
     agent any
     stages {
            post {
+                  always {
                   notify('Job Started')
-                         }
+                  }
+                }
         stage ('Checkout'){ 
             steps { 
                 checkout changelog: false, 
