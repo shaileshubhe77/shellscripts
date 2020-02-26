@@ -47,11 +47,7 @@ def notify(status){
 
 pipeline{
     agent any
-    stages {   
-       always {
-              notify('completed') 
-              //emailext body: 'build started', subject: 'build started', to: 'shaileshubhe77@gmail.com'
-              }
+    stages {
         stage ('Checkout'){ 
             steps { 
                 checkout changelog: false, 
