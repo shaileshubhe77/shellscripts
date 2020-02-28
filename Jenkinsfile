@@ -73,8 +73,6 @@ pipeline{
         }
         stage ('Artifacts'){
             steps {
-                //notify ('Waiting for Deployment')
-                //input 'Deploy to Staging?'
                 archiveArtifacts 'target/*.war'
             }
         }
