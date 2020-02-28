@@ -76,10 +76,10 @@ pipeline{
                 //notify ('Waiting for Deployment')
                 //input 'Deploy to Staging?'
                 archiveArtifacts 'target/*.war'
+		script {
+    			notify('completed')
+		}
             }
         }
-	script {
-    		notify('completed')
-	}
   }
 }
