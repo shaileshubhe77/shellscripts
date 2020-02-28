@@ -48,13 +48,11 @@ def notify(status){
 pipeline{
     agent any
     stages {
-       post {
-         changed {
-           notify('Job Started')
-                }
-            }
         stage ('Checkout'){ 
             steps { 
+                script {
+			notify('build-started')
+			}
                 checkout changelog: false, 
                 scm: [$class: 'GitSCM', 
                 branches: [[name: '*/master']], 
