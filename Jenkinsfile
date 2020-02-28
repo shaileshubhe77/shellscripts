@@ -65,6 +65,9 @@ pipeline{
 
         stage ('Creating package'){
             steps {
+		    script { 
+			    notify ('Waiting for an approval')
+			    input 'Deploy to Production?'
                 sh label: '', script: 'mvn package'
             }
         }
@@ -77,11 +80,7 @@ pipeline{
         }
 
     }
- post {
-    always {
-    input 'Deploy to Staging?' 
-    notify('completed') 
-    //emailext body: 'build started', subject: 'build started', to: 'shaileshubhe77@gmail.com'
-    }
-  }
+	script {
+    		notify('completed')
+	}
 }
