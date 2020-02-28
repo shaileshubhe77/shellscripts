@@ -1,6 +1,5 @@
 def notify(status){
     emailext (
-      wrap([$class: 'BuildUser']) {
        body: """<p> Jenkins Pipeline Notification </p>
             <table border="1" cellpadding="0" cellspacing="0" style="">
                 <thead>
@@ -43,11 +42,10 @@ def notify(status){
        subject: """JenkinsNotification: ${status}:""", 
        to: 'shaileshubhe77@gmail.com'
            )
-      }
 }
 
 pipeline{
-    agent any
+	agent{ label "master" }
     stages {
         stage ('Checkout'){ 
             steps { 
