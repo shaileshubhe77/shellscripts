@@ -1,0 +1,35 @@
+{
+    "name": "av/offlinerepo",
+    "homepage": "http://repos.assetvantage.com:6789",
+    "repositories": [
+        { "type": "git", "url": "https://github.com/Cilex/Cilex.git" },
+        { "type": "git", "url": "https://github.com/aws/aws-sdk-php.git" },
+        { "type": "git", "url": "https://github.com/guzzle/guzzle.git" },
+        { "type": "git", "url": "https://github.com/silexphp/Pimple.git" },
+        { "type": "git", "url": "https://github.com/php-fig/container.git" },
+        { "type": "git", "url": "https://github.com/Cilex/console-service-provider.git" },
+        { "type": "git", "url": "https://github.com/Codeception/Codeception.git" },
+        { "type": "git", "url": "https://github.com/tiger-seo/PhpBuiltinServer.git" },
+        { "type": "git", "url": "https://github.com/Codeception/Specify.git" },
+        { "type": "git", "url": "https://github.com/Codeception/Verify.git" },
+        { "type": "git", "url": "https://github.com/composer/ca-bundle.git" }
+    ],
+        "require": {
+        "psr/container": "*",
+        "pimple/pimple": "*",
+        "cilex/cilex": "1.1.0|dev-master",
+        "aws/aws-sdk-php": "3.186.4|3.186.3|3.186.2",
+        "guzzlehttp/guzzle": "7.3.0|dev-master",
+        "cilex/console-service-provider": "1.0.0|dev-master",
+        "codeception/codeception": "2.1.1|dev-master",
+        "codeception/phpbuiltinserver": "v1.3.0",
+        "codeception/specify": "*",
+        "codeception/verify": "*",
+        "composer/ca-bundle": "1.2.11|1.2.10|1.2.9"
+        },
+    "require-dependencies": true,
+    "require-dev-dependencies":true,
+    "archive": {
+        "directory": "dist"
+    }
+}
